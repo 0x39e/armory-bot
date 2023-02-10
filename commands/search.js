@@ -220,7 +220,7 @@ module.exports = {
                     case 'Fighter':
                         embed.addFields(
                             {
-                                name: `__${Card.displayName}__  \ud83e\udd4a`,
+                                name: `__${Card.displayName}__ - ${Card.rarity}  \ud83e\udd4a`,
                                 value: `${Card.description}\nCost: \`${Card.barkCost}\` | Attack: \`${Card.attack}\` | Stamina: \`${Card.stamina}\``,
                             },
                             {
@@ -232,7 +232,7 @@ module.exports = {
                     case 'Spell':
                         embed.addFields(
                             {
-                                name: `__${Card.displayName}__  \ud83d\udd2e`,
+                                name: `__${Card.displayName}__ - ${Card.rarity}  \ud83d\udd2e`,
                                 value: `${Card.description}\nCost: \`${Card.barkCost}\``,
                             },
                             {
@@ -244,7 +244,7 @@ module.exports = {
                     case 'Weapon':
                         embed.addFields(
                             {
-                                name: `__\ufe0f${Card.displayName}__  \u2694\ufe0f`,
+                                name: `__\ufe0f${Card.displayName}__ - ${Card.rarity}  \u2694\ufe0f`,
                                 value: `${Card.description}\nCost: \`${Card.barkCost}\` | Attack: \`${Card.attack}\` | Durability: \`${Card.durability}\``,
                             },
                             {
@@ -279,7 +279,7 @@ module.exports = {
                     case 'Fighter':
                         embed1.addFields(
                             {
-                                name: `__${Card.displayName}__`,
+                                name: `__${Card.displayName}__ - ${Card.rarity}`,
                                 value: `${Card.description ? `${Card.description}\n` : '\u200b'}Cost: \`${Card.barkCost}\` | Attack: \`${Card.attack}\` | Stamina: \`${Card.stamina}\``,
                             },
                         );
@@ -287,7 +287,7 @@ module.exports = {
                     case 'Spell':
                         embed2.addFields(
                             {
-                                name: `__${Card.displayName}__`,
+                                name: `__${Card.displayName}__ - ${Card.rarity}`,
                                 value: `${Card.description ? `${Card.description}\n` : '\u200b'}Cost: \`${Card.barkCost}\``,
                             },
                         );
@@ -295,7 +295,7 @@ module.exports = {
                     case 'Weapon':
                         embed3.addFields(
                             {
-                                name: `__${Card.displayName}__`,
+                                name: `__${Card.displayName}__ - ${Card.rarity}`,
                                 value: `${Card.description ? `${Card.description}\n` : '\u200b'}Cost: \`${Card.barkCost}\` | Attack: \`${Card.attack}\` | Durability: \`${Card.durability}\``,
                             },
                         );
@@ -313,7 +313,7 @@ module.exports = {
             const cardImg = new AttachmentBuilder(`../img/cards/${card.name}.webp`);
 
             embed
-                .setTitle(`__${card.displayName}__`)
+                .setTitle(`__${card.displayName}__ - *${card.rarity}*`)
                 .setDescription(card.description)
                 .setImage(`attachment://${card.name}.webp`)
                 .setFields(
